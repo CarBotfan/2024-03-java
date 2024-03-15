@@ -7,7 +7,6 @@ public class ConditionalOperator {
         String s = "짝";
         s = "홀";
         int num = (int)(Math.random() * 10) + 1; //1~10
-        s = num % 2 == 0 ? "짝수입니다" : "홀수입니다";
-        System.out.println(num + "은(는) " + s);
+        System.out.println(num + "은(는) " + (num % 2 == 0 ? "짝수입니다" : "홀수입니다"));
     }
 }
