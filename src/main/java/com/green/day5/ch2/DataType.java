@@ -13,5 +13,6 @@ public class DataType {
             : 객체의 주소값을 저장
             : 첫 글자가 대문자로 시작 (class를 객체로 만들기 때문)
          */
+
     }
 }
