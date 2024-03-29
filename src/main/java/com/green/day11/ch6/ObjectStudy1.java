@@ -4,6 +4,9 @@ public class ObjectStudy1 {
     /*
     OOP(Object Oriented Programming)
     UI (User Interface), UX (User Experience)
+    EJB, Spring
+    Framework, Library
+
     Java의 특징
     -OS의 독립적
     -객체 지향 언어

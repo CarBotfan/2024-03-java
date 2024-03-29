@@ -1,6 +1,6 @@
 package com.green.day11.ch6;
 
-public class TvTestBj4 {
+public class TvTest5 {
     public static void main(String[] args) {
         //Tv 객체의 주소 값을 3개 저장할수 있는 배열
         Tv[] tvArr = new Tv[3];
