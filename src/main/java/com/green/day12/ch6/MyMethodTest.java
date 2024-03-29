@@ -1,4 +1,5 @@
 package com.green.day12.ch6;
+import java.util.Arrays;
 import java.util.Scanner;
 public class MyMethodTest {
     public static void main(String[] args) {
@@ -21,6 +22,7 @@ public class MyMethodTest {
         System.out.println(randomValue2);
         randomValue2 = mm.getRandomValue(5, 31);
         System.out.println(randomValue2);
+        mm.PrintArray(mm.returnGugudan(2, 8));
     }
 }
 
@@ -30,7 +32,24 @@ class MyMethod {
             System.out.printf("%d x %d = %d\n", n, i, (n * i));
         }
     }
-
+    String[][] returnGugudan(int n1, int n2) {
+        String[][] gugudan = new String[n2 - n1 + 1][9];
+        for(int i = 0; i <= (n2 - n1); i++) {
+            int num1 = n1 + i;
+            for(int j = 0; j < 9; j++) {
+                int num2 = j + 1;
+                gugudan[i][j] = num1 + " x " + num2 + " = " + num1 * num2;
+            }
+        }
+        return gugudan;
+    }
+    void PrintArray(String[][] arr1) {
+        for(int i = 0; i < arr1.length; i++) {
+            for(int j = 0; j < arr1[i].length; j++) {
+                System.out.println(arr1[i][j]);
+            }
+        }
+    }
     void checkOddEven(int n) {
         if(n == 0) {
             System.out.println("0입니다.");

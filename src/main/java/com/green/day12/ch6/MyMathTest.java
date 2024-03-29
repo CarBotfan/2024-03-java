@@ -7,13 +7,6 @@ public class MyMathTest {
         myMath.minus(100, 50);
         myMath.minus(200, 50);
         System.out.println(myMath.returnAdd(500, 600));
-        Weapon sword = new Weapon("longsword", 10, 1, 13);
-        System.out.println(sword.durability);
-        for(int i = 0; i < 51; i++) {
-            sword.Attack();
-        }
-        System.out.println(sword.status);
-        System.out.println(sword.durability);
 
     }
 }
