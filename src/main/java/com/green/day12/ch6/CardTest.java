@@ -13,6 +13,9 @@ public class CardTest {
         System.out.println(card1.kind);
         System.out.println(card1.number);
         System.out.println(Card.width);
+        String ss ="-";
+        ss += "-";
+        System.out.println(ss);
 
 
     }

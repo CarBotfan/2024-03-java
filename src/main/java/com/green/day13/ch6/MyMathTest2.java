@@ -2,7 +2,7 @@ package com.green.day13.ch6;
 
 public class MyMathTest2 {
     public static void main(String[] args) {
-        long r = MyMath2.add(10, 20);
+        long r = MyMath2.add(10, 20);//메소드 이름: add, 클래스 이름:MyMath2 리턴타입 long 매개변수 2개 static 메소드
         System.out.println(r);
 
         MyMath2 myMath2 = new MyMath2();
