@@ -3,7 +3,7 @@ package com.green.day14.ch6;
 import java.util.Arrays;
 
 public class MyArrays {
-    static void printArr(int[] arr) {
+    public static void printArr(int[] arr) {
         System.out.printf("[");
         if(arr.length != 0) {
             System.out.print(arr[0]);
@@ -32,6 +32,10 @@ class myArraysTest {
         int[] arr = {3, 2, 1, 6, 5, 4, 10};
         MyArrays.printArr(arr);
         int[] arr2 = {};
+        String str1 = MyArrays.toString(arr);
+        String str2 = MyArrays.toString(arr);
+        System.out.println(str1 == str2);
+        System.out.println(str1.equals(str2));
         System.out.println(MyArrays.toString(arr));
         System.out.println(MyArrays.toString(arr2));
     }

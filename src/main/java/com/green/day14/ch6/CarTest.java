@@ -12,7 +12,7 @@ public class CarTest {
         System.out.println(c3.color + c3.gearType + c3.door);
 
         Car c4 = new Car(c2);
-        c4.color = "Black";
+        System.out.println(c4.equals(c2));
         System.out.println(c4.color + c4.gearType + c4.door);
         System.out.println(c2.color + c2.gearType + c2.door);
     }
