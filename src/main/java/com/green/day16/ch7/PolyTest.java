@@ -12,10 +12,11 @@ public class PolyTest {
         Dog dog_1 = new BullDog();
 //        Dog dog_2 = new Animal();//자식 타입의 변수는 부모 객체의 주소값을 담을 수 없음
 //        Dog dog_3 = (Dog)new Animal();//컴파일 에러
-        //자식 객체는 더 많은 메소드를 가지고 있을 수 있으므로 부모 객체를 담을 수 없음
+        //자식 타입은 더 많은 메소드를 가지고 있을 수 있으므로 부모 객체를 담을 수 없음
         ani_1.crying();
         //ani_1.sleep();//animal 클래스엔 sleep이라는 메소드가 없으므로 이 객체에서는 실행 불가
         Dog dog_4 = (Dog)ani_1;//Dog로 형변환해 저장 시 sleep 메소드 사용가능
+        Dog dog_5 = (Dog)ani_2;
         ((Dog)ani_1).sleep();
         dog_4.sleep();
         BullDog bullDog_1 = (BullDog)ani_2;

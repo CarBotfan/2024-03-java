@@ -12,9 +12,12 @@ public class PolyTest2 {
 
     public static void doCrying(Animal animal) {
         animal.crying();
-//        if(animal instanceof Dog) {
-//            ((Dog) animal).sleep();
-//        }
+        if(animal instanceof Dog) {
+            ((Dog) animal).sleep();
+
+            Dog dog = (Dog)animal;
+            dog.sleep();
+        }
         if(animal instanceof Dog dog) { //enhanced instanceof
             dog.sleep();
         }
