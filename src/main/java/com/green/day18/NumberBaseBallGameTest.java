@@ -1,11 +1,13 @@
 package com.green.day18;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class NumberBaseBallGameTest {
     public static void main(String[] args) {
         NumberBaseBallGame game = new NumberBaseBallGame(3);
         System.out.println(Arrays.toString(game.getNumArr()));
+        game.start();
     }
 }
 
@@ -29,11 +31,9 @@ class NumberBaseBallGame {
         for(int i = 0; i < numbers.length; i++) {
             int randomNum = (int)(Math.random() * 9);
             int temp = numbers[i];
-            System.out.printf("%d. %d <-> %d. %d\n", i, numbers[i], randomNum, numbers[randomNum]);
             numbers[i] = numbers[randomNum];
             numbers[randomNum] = temp;
         }
-        System.out.println(Arrays.toString(numbers));
         for(int i = 0; i < NUMBER_COUNT; i++) {
             numArr[i] = numbers[i];
         }
@@ -42,11 +42,41 @@ class NumberBaseBallGame {
         return numArr;
     }
     void start() {
-        int strike = 0, ball = 0, out = 0;
+        Scanner scan = new Scanner(System.in);
         while(true) {
-            if(strike == 3) {
+            System.out.printf("숫자 %d개 입력 (space로 구분)>> ", NUMBER_COUNT);
+            String strAnswer = scan.nextLine();
+            int[] answerArr = this.changeArr(strAnswer);
+            if(answerArr.length != NUMBER_COUNT) {
+                System.out.println("잘못된 입력입니다. 다시 입력하세요");
+                continue;
+            }
+            int strike = 0, ball = 0;
+            for(int i = 0; i < numArr.length; i++) {
+                for(int j = 0; j < answerArr.length; j++) {
+                    if(numArr[i] == answerArr[j] && i == j) {
+                        strike++;
+                        break;
+                    } else if(numArr[i] == answerArr[j] && i != j) {
+                        ball++;
+                        break;
+                    }
+                }
+            }
+            System.out.printf("Strike: %d, Ball: %d, Out: %d\n", strike, ball, NUMBER_COUNT - (strike + ball));
+            if(strike == numArr.length) {
                 break;
             }
         }
+        scan.close();
+        System.out.println("you win\n");
+    }
+    int[] changeArr(String str) {
+        String[] strArr = str.split(" ");
+        int[] numArr = new int[strArr.length];
+        for(int i = 0; i < strArr.length; i++) {
+            numArr[i] = Integer.parseInt(strArr[i]);
+        }
+        return numArr;
     }
 }
