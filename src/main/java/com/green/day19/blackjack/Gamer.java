@@ -14,6 +14,13 @@ public class Gamer {
     public List<Card> openCards() {
         return cards;
     }
+    public int getScore() {
+        int score = 0;
+        for(Card card : cards) {
+            score += card.getScore();
+        }
+        return score;
+    }
 }
 class GamerTest {
     public static void main(String[] args) {
